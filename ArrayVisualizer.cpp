@@ -8,15 +8,13 @@
 #include "ArrayHelper.cpp"
 #include <unistd.h>
 
-// I know this is bad, but oh well :/ Not going for best design, just
-// trying to learn
+
 int length;
 int delay;
 int* arr;
 void (*sorter) (int*, int);
 
-// used https://www.codeproject.com/Articles/182109/Setting-up-an-OpenGL-development-environment-in-Ub
-// as starting place
+
 void renderFunction()
 {
 	glClearColor(0.0, 0.0, 0.0, 0.0);
@@ -84,9 +82,7 @@ void keyboardEvent(unsigned char c, int x, int y)
 	}
 }
 
-/* Main method - main entry point of application
-the freeglut library does the window creation work for us, 
-regardless of the platform. */
+
 int setUpGlutAndArray(int argc, char** argv, void (*sortingAlgorithm)(int*, int))
 {
 	sorter = sortingAlgorithm;
@@ -109,13 +105,3 @@ int setUpGlutAndArray(int argc, char** argv, void (*sortingAlgorithm)(int*, int)
 
 	glutMainLoop();
 }
-
-/* testing code
-int main(int argc, char** argv)
-{
-	length = 400;
-	setUpGlutAndArray(argc, argv);
-	free(arr);
-	return 0;
-}
-*/
